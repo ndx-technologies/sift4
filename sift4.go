@@ -41,6 +41,9 @@ func Distance(s1, s2 string, maxOffset, maxDistance int, buffer *Buffer) int {
 	if buffer == nil {
 		buffer = &Buffer{}
 	}
+	if buffer.offset == nil {
+		buffer.offset = make([]offset, 0, maxOffset)
+	}
 	buffer.offset = buffer.offset[:0]
 
 	for (c1 < len(s1)) && (c2 < len(s2)) {

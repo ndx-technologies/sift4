@@ -17,8 +17,9 @@ func ExampleDistance() {
 func ExampleDistance_buffer() {
 	var b sift4.Buffer
 	d := sift4.Distance("kitten", "sitting", 100, 5, &b)
-	fmt.Print(d)
-	// Output: 3
+	d2 := sift4.Distance("kitten", "sitting", 100, 5, &b)
+	fmt.Print(d, d2)
+	// Output: 3 3
 }
 
 func TestDistance(t *testing.T) {
