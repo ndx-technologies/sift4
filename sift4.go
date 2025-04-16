@@ -14,7 +14,7 @@ type offset struct {
 	trans bool
 }
 
-// Distance is fast O(N) string distance algorithm.
+// Distance is fast approximate string distance O(N) algorithm.
 // If pointer to buffer is provided, then it will be reused for storing temporary structures.
 //   - maxOffset is the number of characters to search for matching letters
 //   - maxDistance is the distance at which the algorithm should stop computing the value and just exit (the strings are too different anyway)
@@ -102,7 +102,7 @@ func Distance(s1, s2 string, maxOffset, maxDistance int, buffer *Buffer) int {
 		c2++
 
 		if maxDistance > 0 {
-			if d := max(c1, c2) - lcss + trans; d > maxDistance {
+			if d := max(c1, c2) - lcss + trans; d >= maxDistance {
 				return d
 			}
 		}

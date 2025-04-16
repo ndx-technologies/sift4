@@ -1,4 +1,4 @@
-SIFT4[^1] — Super Fast and Accurate string distance algorithm
+SIFT4 — fast approximate string distance algorithm[^1]
 
 * zero memory copy
 * 100% test coverage

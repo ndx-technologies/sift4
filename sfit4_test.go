@@ -42,12 +42,12 @@ func TestDistance(t *testing.T) {
 		{"abc", "def", 100, 5, 3},
 		{"hello", "helo", 100, 5, 1},
 		{"world", "word", 100, 5, 1},
-		{"halooooxo", "hbloooogo", 100, 5, 6},
+		{"halooooxo", "hbloooogo", 100, 5, 5},
 
 		// early exit not reached
-		{"distance", "difference", 100, 5, 6},
-		{"abcdef", "xyz", 100, 2, 3},
-		{"abcdefabcdefabcdefabcdefabcdefabcdef", "xyz", 100, 2, 3},
+		{"distance", "difference", 100, 5, 5},
+		{"abcdef", "xyz", 100, 2, 2},
+		{"abcdefabcdefabcdefabcdefabcdefabcdef", "xyz", 100, 2, 2},
 
 		// transposition
 		{"abc", "acb", 100, 5, 1}, // Damerau–Levenshtein distance, transposition of adjacent characters is one operation
