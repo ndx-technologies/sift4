@@ -1,0 +1,34 @@
+name: Test
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions: read-all
+
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: code
+        uses: actions/checkout@v4
+
+      - name: go
+        uses: actions/setup-go@v5
+        with:
+          go-version: ^1.24
+
+      - name: test
+        run: go test -coverprofile=coverage.out -covermode=atomic -cover ./...
+
+      - name: fuzz
+        run: go test -list . | grep Fuzz | xargs -P 8 -I {} go test -fuzz {} -fuzztime 30s .
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4.1.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: coverage.out
