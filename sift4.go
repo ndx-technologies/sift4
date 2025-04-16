@@ -14,7 +14,7 @@ type offset struct {
 	trans bool
 }
 
-// Distance is fast O(N) approximate string distance algorithm.
+// Distance is fast O(N) string distance algorithm.
 // If pointer to buffer is provided, then it will be reused for storing temporary structures.
 //   - maxOffset is the number of characters to search for matching letters
 //   - maxDistance is the distance at which the algorithm should stop computing the value and just exit (the strings are too different anyway)

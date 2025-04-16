@@ -1,4 +1,4 @@
-SIFT4 — fast approximate string distance algorithm
+SIFT4[^1] — Super Fast and Accurate string distance algorithm
 
 * zero memory copy
 * 100% test coverage
@@ -22,3 +22,5 @@ BenchmarkSIFT4Distance/buffer/long_different-16          1520445               7
 PASS
 ok      github.com/ndx-technologies/sift4       11.848s
 ```
+
+[^1]: https://siderite.dev/blog/super-fast-and-accurate-string-distance.html
