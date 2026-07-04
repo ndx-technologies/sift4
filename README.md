@@ -3,6 +3,8 @@ SIFT4 — fast approximate string distance algorithm[^1]
 * zero memory copy
 * 100% test coverage
 
+[![codecov](https://codecov.io/github/ndx-technologies/sift4/graph/badge.svg?token=Q6MB0VDLLZ)](https://codecov.io/github/ndx-technologies/sift4)
+
 ```bash
 $ go test -benchmem -bench .
 goos: darwin
